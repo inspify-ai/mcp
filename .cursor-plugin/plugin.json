@@ -2,15 +2,21 @@
   "name": "inspify-ai",
   "displayName": "INSPIFY AI",
   "version": "0.2.0",
-  "description": "INSPIFY AI — Scene Designer and Creative Agency. Story jobs and Hub deep-links. Team pilot Phase 1.",
+  "description": "INSPIFY AI \u2014 Scene Designer and Creative Agency. Story jobs and Hub deep-links. Team pilot Phase 1.",
   "author": {
     "name": "INSPIFY AI",
     "email": "bot@inspify.ai"
   },
   "homepage": "https://app.inspify.ai",
-  "repository": "https://github.com/inspify-ai/inspify-ai",
+  "repository": "https://github.com/inspify-ai/mcp",
   "license": "MIT",
-  "keywords": ["inspify", "inspify ai", "scene designer", "creative agency", "mcp"],
+  "keywords": [
+    "inspify",
+    "inspify ai",
+    "scene designer",
+    "creative agency",
+    "mcp"
+  ],
   "mcpServers": "./.mcp.json",
   "skills": "skills"
 }

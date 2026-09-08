@@ -22,7 +22,7 @@ Deny-by-default: host/Mac Shell · AWS Admin/human keys · Chair disk wipe.
 Tenancy: token brand allowlist; no cross-Brand DNA; prefer single-tenant read-only until isolation proven.
 
 ## Marketplace
-Source org: **inspify-ai** only (`https://github.com/inspify-ai/inspify-ai`). Never `inspify/*`.
+Source org: **inspify-ai** only (`https://github.com/inspify-ai/mcp`). Never `inspify/*`.
 
 ## License
 MIT
