@@ -16,10 +16,10 @@ Read security-deny skill first — deny host/Mac Shell, AWS Admin keys, Chair di
 ## Auth
 Operator-issued bearer via secure secret UI only. Never embed tokens. Scopes + brand allowlist server-enforced.
 
-## ALLOWED (16 — contract names ONLY)
+## ALLOWED (15 — contract names ONLY)
 | Tool | Mode |
 |---|---|
-| `list_brands` | read |
+REMOVE_LINE
 | `list_campaign_goals` | read |
 | `list_jobs` | read |
 | `get_job` | read |
