@@ -1,28 +1,29 @@
-# inspify-ai — INSPIFY AI plugin (Phase 1)
+# INSPIFY AI — MCP plugin
 
-INSPIFY AI Creative Agency + Hub connector for agent runtimes.
+Connect agent runtimes (Cursor, Grok, Claude, and others) to the INSPIFY AI Creative Agency. Start Story jobs, poll progress, review work, give feedback, publish, and deep-link to the Hub.
 
-**Plugin id:** `inspify-ai` · **Display:** INSPIFY AI · **MCP server key:** `inspify-ai`  
-**Product:** AI Creative Agency
+- **Plugin id:** `inspify-ai`
+- **Display:** INSPIFY AI
+- **MCP server key:** `inspify-ai`
+- **Product:** AI Creative Agency
 
-## What it ships
-- **MCP:** remote HTTP → `https://mcp.inspify.ai/mcp`
-- **Skills:** security deny-by-default · AI Creative Agency tool guide (Alex 16) · Phase 1 pilot scope
+## Endpoints
+- **MCP server:** `https://mcp.inspify.ai/mcp` (Streamable HTTP)
+- **Hub UI:** `https://app.inspify.ai`
 
-## Credentials (not in this repo)
-Operator issues a least-privilege bearer service token (brand allowlist + scopes).  
-**Never** commit tokens, `.env`, AKIA keys, or MFA.
+## What it provides
+- **MCP server** exposing the AI Creative Agency tools — start a Story job, answer research questions, select a direction, review the work, submit feedback, and publish.
+- **Skills** for agent runtimes: a security-by-default skill and the AI Creative Agency tool guide.
 
-## Network endpoints
-- `https://mcp.inspify.ai/mcp` — AI Creative Agency MCP
-- `https://app.inspify.ai` — Hub UI deep-links
+## Authentication
+This plugin does **not** ship credentials. Each agent uses a least-privilege bearer service token issued by an INSPIFY AI operator. A token is scoped to a single brand and a set of read/write permissions, and the server enforces that scope on every call.
 
-## Security (Morgan gate)
-Deny-by-default: host/Mac Shell · AWS Admin/human keys · Chair disk wipe.  
-Tenancy: token brand allowlist; no cross-Brand DNA; prefer single-tenant read-only until isolation proven.
+Never commit tokens, `.env` files, cloud access keys, or MFA secrets to this repository.
 
-## Marketplace
-Source org: **inspify-ai** only (`https://github.com/inspify-ai/mcp`). Never `inspify/*`.
+## Security
+- **Deny-by-default:** the server never exposes host shell access, cloud admin keys, or destructive disk operations.
+- **Tenancy:** every request is scoped to the brand bound to the token. Cross-brand access is rejected.
+- **Least privilege:** prefer read-only scopes until write access is explicitly required.
 
 ## License
 MIT

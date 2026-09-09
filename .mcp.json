@@ -3,7 +3,7 @@
     "inspify-ai": {
       "type": "http",
       "url": "https://mcp.inspify.ai/mcp",
-      "note": "INSPIFY AI Creative Agency MCP (Streamable HTTP). Auth: Bearer service token issued by operator — never ship tokens in this bundle. Least-privilege scopes + brand allowlist enforced server-side. Phase 1 team pilot only."
+      "note": "INSPIFY AI Creative Agency MCP (Streamable HTTP). Auth: Bearer service token issued by operator — never ship tokens in this bundle. Least-privilege scopes + brand allowlist enforced server-side."
     }
   }
 }
