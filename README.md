@@ -2,7 +2,7 @@
 
 INSPIFY AI Creative Agency + Hub connector for agent runtimes.
 
-**Plugin id:** `inspify-ai` · **Display:** INSPIFY AI · **MCP server key:** `inspify`  
+**Plugin id:** `inspify-ai` · **Display:** INSPIFY AI · **MCP server key:** `inspify-ai`  
 **Product:** Creative Agency
 
 ## What it ships
