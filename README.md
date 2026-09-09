@@ -3,18 +3,18 @@
 INSPIFY AI Creative Agency + Hub connector for agent runtimes.
 
 **Plugin id:** `inspify-ai` · **Display:** INSPIFY AI · **MCP server key:** `inspify-ai`  
-**Product:** Creative Agency
+**Product:** AI Creative Agency
 
 ## What it ships
 - **MCP:** remote HTTP → `https://mcp.inspify.ai/mcp`
-- **Skills:** security deny-by-default · Creative Agency tool guide (Alex 16) · Phase 1 pilot scope
+- **Skills:** security deny-by-default · AI Creative Agency tool guide (Alex 16) · Phase 1 pilot scope
 
 ## Credentials (not in this repo)
 Operator issues a least-privilege bearer service token (brand allowlist + scopes).  
 **Never** commit tokens, `.env`, AKIA keys, or MFA.
 
 ## Network endpoints
-- `https://mcp.inspify.ai/mcp` — Creative Agency MCP
+- `https://mcp.inspify.ai/mcp` — AI Creative Agency MCP
 - `https://app.inspify.ai` — Hub UI deep-links
 
 ## Security (Morgan gate)

@@ -2,12 +2,12 @@
 name: inspify-phase1-pilot
 description: >-
   Use for INSPIFY AI Phase 1 internal team pilot — Alex allowlist scope,
-  Bible ceiling, Creative Agency product name, no customer marketplace claims.
+  Bible ceiling, AI Creative Agency product name, no customer marketplace claims.
 ---
 # Phase 1 — internal team pilot
 
-**Allowlist:** Alex CONFIRM — 16 Creative Agency MCP tools only.  
-**Product:** Creative Agency (AI Creative Agency).
+**Allowlist:** Alex CONFIRM — 16 AI Creative Agency MCP tools only.  
+**Product:** AI Creative Agency.
 
 ## In
 - Team agents only (“here with us”).
@@ -21,5 +21,5 @@ description: >-
 - Cross-tenant Brand DNA.
 
 ## Vocab (Bible)
-INSPIFY · Scene Designer · Creative Agency · Story · Brand DNA. Company = Inspify AI.
+INSPIFY · Scene Designer · AI Creative Agency · Story · Brand DNA. Company = Inspify AI.
 External commercial lead = annual platform 20k / 85k / 250k only — never $/Story as lead.

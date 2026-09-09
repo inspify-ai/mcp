@@ -8,7 +8,7 @@ description: >-
 
 **Endpoint:** `https://mcp.inspify.ai/mcp` (Streamable HTTP)  
 **Allowlist SSOT:** `/workspace/inspify/gtm/MCP-PHASE1-ALLOWLIST-v1.md` (Alex CONFIRM)  
-**Product name:** Creative Agency
+**Product name:** AI Creative Agency
 
 ## Before every call
 Read security-deny skill first — deny host/Mac Shell, AWS Admin keys, Chair disk; no secrets; no cross-brand DNA.
