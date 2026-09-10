@@ -10,6 +10,7 @@
   "homepage": "https://app.inspify.ai",
   "repository": "https://github.com/inspify-ai/mcp",
   "license": "MIT",
+  "logo": "assets/icon.png",
   "keywords": [
     "inspify",
     "inspify ai",
