@@ -9,7 +9,7 @@ Connect agent runtimes (Cursor, Grok, Claude, and others) to the INSPIFY AI Crea
 
 ## Endpoints
 - **MCP server:** `https://mcp.inspify.ai/mcp` (Streamable HTTP)
-- **Hub UI:** `https://app.inspify.ai`
+- **Hub UI:** `https://www.inspify.ai/login`
 
 ## What it provides
 - **MCP server** exposing the AI Creative Agency tools — start a Story job, answer research questions, select a direction, review the work, submit feedback, and publish.
