@@ -2,7 +2,7 @@
   "name": "inspify-ai",
   "displayName": "INSPIFY AI",
   "version": "0.3.0",
-  "description": "INSPIFY AI Creative Agency for marketing teams: create brand storybooks from a brief, publish them on the brand's own domain, share them with tracked links or link campaigns, and read how they perform.",
+  "description": "INSPIFY AI Creative Agency for marketing teams: create brand storybooks from a brief, publish them on the brand's own domain, run messaging and link campaigns, share tracked links, and read how they perform.",
   "author": {
     "name": "INSPIFY AI",
     "email": "bot@inspify.ai"
@@ -16,6 +16,7 @@
     "inspify ai",
     "inspify creative agency",
     "inspify storybook",
+    "inspify campaigns",
     "inspify hub"
   ],
   "domains": [

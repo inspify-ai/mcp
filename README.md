@@ -1,6 +1,6 @@
 # INSPIFY AI — MCP plugin
 
-Connects agent runtimes (Grok Build, Cursor, Claude and others) to the INSPIFY AI Creative Agency. Marketing teams use it to create brand storybooks from a brief, publish them on the brand's own domain, share them with tracked links or link campaigns, and read how they perform.
+Connects agent runtimes (Grok Build, Cursor, Claude and others) to the INSPIFY AI Creative Agency. Marketing teams use it to create brand storybooks from a brief, publish them on the brand's own domain, run messaging and link campaigns, share tracked links, and read how they perform.
 
 - **Plugin id:** `inspify-ai`
 - **Version:** 0.3.0
@@ -8,7 +8,7 @@ Connects agent runtimes (Grok Build, Cursor, Claude and others) to the INSPIFY A
 
 ## What it ships
 - **One MCP server (HTTP):** `https://mcp.inspify.ai/mcp`. The server lists the tools a token may use and explains them in its `initialize` instructions; the plugin carries no copy of the tool list.
-- **Three skills:** `inspify-creative-agency-mcp` (connection and scope), `inspify-story-workflow` (order of the work), `inspify-security-deny` (deny-by-default rules).
+- **Four skills:** `inspify-creative-agency-mcp` (connection and scope), `inspify-story-workflow` (brief to tracked link), `inspify-campaign-management` (campaigns, audiences, groups, results), `inspify-security-deny` (deny-by-default rules).
 - No hooks, commands, scripts or binaries.
 
 ## Network endpoints
