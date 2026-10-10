@@ -1,8 +1,8 @@
 {
   "name": "inspify-ai",
   "displayName": "INSPIFY AI",
-  "version": "0.2.0",
-  "description": "INSPIFY AI \u2014 Scene Designer and AI Creative Agency. Start Story jobs, poll status, and deep-link to the Hub.",
+  "version": "0.3.0",
+  "description": "INSPIFY AI Creative Agency for marketing teams: create brand storybooks from a brief, publish them on the brand's own domain, share them with tracked links or link campaigns, and read how they perform.",
   "author": {
     "name": "INSPIFY AI",
     "email": "bot@inspify.ai"
@@ -14,14 +14,15 @@
   "keywords": [
     "inspify",
     "inspify ai",
-    "scene designer",
-    "creative agency",
-    "brand dna"
+    "inspify creative agency",
+    "inspify storybook",
+    "inspify hub"
   ],
   "domains": [
     "inspify.ai",
     "www.inspify.ai",
-    "mcp.inspify.ai"
+    "mcp.inspify.ai",
+    "inspify.com"
   ],
   "category": "productivity",
   "mcpServers": "./.mcp.json",

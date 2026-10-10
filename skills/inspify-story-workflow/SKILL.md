@@ -1,41 +1,37 @@
 ---
 name: inspify-story-workflow
 description: >-
-  Use to take an INSPIFY AI Creative Agency Story job from brief to published.
-  Describes the ordered tool calls an agent makes across the job lifecycle.
-  Pair with inspify-security-deny and inspify-creative-agency-mcp.
+  Use to take an INSPIFY AI storybook from brief to a shared, tracked link:
+  the order of the MCP tool calls across a story job, publishing, sharing and
+  tracking. Pair with inspify-security-deny and inspify-creative-agency-mcp.
 ---
-# INSPIFY AI Creative Agency — Story job workflow
+# INSPIFY AI — from brief to tracked link
 
-The end-to-end lifecycle of a Story job. Each step names the MCP tool to call and what to wait for before the next.
+The order of the work. If the server's `initialize` instructions or a tool's description say something different, follow the server.
 
-## 1. Start the job
-- `start_story_job` — send the brief, brand context, and any asset references. Returns a `jobId` and the job enters `generating`.
-- If research is required, the job pauses in research and surfaces pending questions.
+## 1. Make the story
+- `get_brand_kit` (optional) — the brand's persona, palette, typography and logos. Story jobs already use it.
+- `start_story_job` — send the brief. Returns a `jobId`. It costs credits; `get_credits` shows the balance and the cost.
+- `get_job` — check progress. `envelope.nextAction.tool` names the next call.
+- `get_pending_questions` → `submit_answers` — when the job asks questions.
+- `answer_design_decision` — when `job.designDecisions` holds a pending question.
+- `list_directions` → `select_direction` — show the concepts to the user and let them choose.
 
-## 2. Answer research questions
-- `get_pending_questions` — fetch the open questions for the job.
-- `submit_answers` — return the answers. The job resumes generation.
-- Some jobs also surface design decisions: `answer_design_decision` resolves them.
+## 2. Review and repair
+- `get_review_bundle` — scenes, review films (links valid 10 minutes) and findings.
+- `submit_feedback` — a problem in one scene, in plain words. Follow with `get_repair_status`, then review again.
+- `submit_review_recommendation` — your own grades and recommendation. Advice only.
 
-## 3. Choose a creative direction
-- `list_directions` — read the candidate creative directions the agency authored.
-- `select_direction` — pick one. Production of the Story begins.
+## 3. Publish
+- `publish_story` — needs the `storybookId` (from `get_job`, the selected direction) and an approval code from a named person. Ask the user for the code.
+- `get_published_story` — the story's link on the brand's own domain.
 
-## 4. Review the work
-- `get_job` — poll status until the Story is ready for review.
-- `get_review_bundle` — fetch signed URLs to the rendered Storybook (video) and any story-level findings.
-- `submit_review_recommendation` — record a review verdict (the author never grades its own work).
-- `submit_feedback` — send scene-specific notes if revisions are needed.
+## 4. Share
+- `create_link_campaign` — a link campaign: a short link on the brand's domain, tracked under the campaign id.
+- `create_share_link` — the same kind of link without a campaign.
+- `create_campaign` — a campaign for contacts already in one of the brand's campaign audiences.
 
-## 5. Repair loop (if needed)
-- `get_repair_status` — poll while revisions are in flight. Repeat from step 4 when a new revision is ready.
-
-## 6. Publish
-- `publish_story` — publish the approved Story to the Hub. This requires a human approval receipt (human-in-command); the agent never self-publishes.
-- `get_published_story` — fetch the public Hub link for the published Story.
-
-## Rules of thumb
-- Poll async work with `get_job` / `get_review_bundle`; do not busy-wait.
-- Writes: confirm before send. Publish: human-in-command only.
-- Deep-link humans to the Hub Scene Designer (URL only) for manual editing.
+## 5. Track
+- `get_campaign_analytics` — results of a campaign or link campaign.
+- `get_storybook_insights` — all traffic of a storybook; pass a share link's `utm_campaign` as `campaign`.
+- `get_audience_analytics` — results per recipient of a campaign.

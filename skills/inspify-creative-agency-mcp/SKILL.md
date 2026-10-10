@@ -1,40 +1,31 @@
 ---
 name: inspify-creative-agency-mcp
 description: >-
-  Use to start or poll INSPIFY AI Creative Agency Story jobs via MCP. Pair with
-  inspify-security-deny first. Only the allowed tools below are supported.
+  Use when working with INSPIFY AI through its MCP server: brand storybooks,
+  campaigns, share links, analytics and the brand kit. Explains the connection,
+  the token's scope, and where the current list of tools comes from.
 ---
 # INSPIFY AI Creative Agency MCP
 
-**Endpoint:** `https://mcp.inspify.ai/mcp` (Streamable HTTP)  
-**Product name:** AI Creative Agency
+**Endpoint:** `https://mcp.inspify.ai/mcp` (Streamable HTTP)
+**Auth:** a bearer token issued by INSPIFY, read from the `INSPIFY_MCP_TOKEN` environment variable. One token belongs to one brand; its scopes decide which tools the server offers.
 
-## Before every call
-Read the security-deny skill first — no host shell, no cloud admin keys, no destructive disk ops, no secrets, no cross-brand data.
+## The server is the reference
+- The server's `initialize` instructions describe the order of the work, where each id comes from, and what is not available yet. Read them first.
+- `tools/list` returns exactly the tools this token may use, each with a description and documented parameters. Use those tools only. The list grows over time, so do not rely on a fixed list from this file.
 
-## Auth
-Operator-issued bearer token via a secure secret store only. Never embed tokens. Scopes and brand allowlist are enforced server-side.
+## What the server covers
+- **Story jobs:** make an interactive brand storybook from a brief, answer its questions, choose a creative direction, review it, send feedback.
+- **Publishing:** `publish_story` makes the story live on the brand's own domain. It needs an approval code issued after a named person approves the version; the agent cannot create that code.
+- **Sharing:** `create_share_link` (a tracked short link) and `create_link_campaign` (the same link saved as a campaign).
+- **Campaigns:** create, update and change status. Changing status does not send messages.
+- **Analytics:** storybook, scene, campaign and audience results.
+- **Hub reads:** storybooks, scenes, teams, people, workspace, and the brand kit (read-only).
+- **Credits:** `get_credits` shows the balance and what a story job costs. Buying credits through this connection is not available yet.
 
-## Allowed tools (15 — contract names only)
-| Tool | Mode |
-|---|---|
-| `list_campaign_goals` | read |
-| `list_jobs` | read |
-| `get_job` | read |
-| `get_pending_questions` | read |
-| `start_story_job` | write — confirm before send |
-| `submit_answers` | write — confirm |
-| `answer_design_decision` | write — confirm |
-| `list_directions` | read |
-| `select_direction` | write — confirm |
-| `get_review_bundle` | read |
-| `submit_review_recommendation` | write — author never grades own work |
-| `submit_feedback` | write — confirm |
-| `get_repair_status` | read |
-| `publish_story` | write — human-in-command; confirm |
-| `get_published_story` | read |
-
-Hub deep-links to the Scene Designer are URL guidance only (not an MCP tool). Poll async work via `get_job` / `get_review_bundle`.
-
-## Do not invent
-Do not call tools outside the list above (e.g. `list_stories`, `get_story`, `list_scenes`, `get_scene`, `start_agency_job`, `get_agency_job`, `get_ai_credits`, `list_campaigns`, `get_campaign_funnel`, or `hub_deep_link` — none of these are MCP tools). Also: no customer tokens, no localisation claims, no secret tooling, no cross-tenant reads, no host-shell fallbacks.
+## Working rules
+- Ids come from earlier results. Never invent one.
+- Story jobs take minutes to hours. Check back with `get_job`; do not poll in a tight loop.
+- Write tools take an `idempotencyKey`: a new unique value per action, reused only to retry the same action.
+- Confirm with the user before spending credits, publishing, or changing a campaign.
+- Errors carry `data.reason`; the server's instructions explain each one.
