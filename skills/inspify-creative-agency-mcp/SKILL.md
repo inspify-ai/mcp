@@ -17,7 +17,7 @@ description: >-
 ## What the server covers
 - **Story jobs:** make an interactive brand storybook from a brief, answer its questions, choose a creative direction, review it, send feedback.
 - **Publishing:** `publish_story` makes the story live on the brand's own domain. It needs an approval code issued after a named person approves the version; the agent cannot create that code.
-- **Sharing:** `create_share_link` (a tracked short link) and `create_link_campaign` (the same link saved as a campaign).
+- **Sharing:** `create_share_link` (a tracked short link to a story) and `create_link_campaign` (the same link saved as a campaign). `create_tracked_link` shortens any web address, such as a page of the brand's website, with UTM values; INSPIFY counts no clicks for it.
 - **Campaigns:** messaging and link campaigns, status, audiences, campaign groups and results — see `inspify-campaign-management`. Changing status does not send messages.
 - **Analytics:** storybook, scene, campaign and audience results.
 - **Hub reads:** storybooks, scenes, teams, people, workspace, and the brand kit (read-only).

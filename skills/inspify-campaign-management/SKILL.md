@@ -13,6 +13,11 @@ A campaign delivers one published storybook. If the server's `initialize` instru
 - **Messaging campaign** — `create_campaign`: a name, `channel` (any of whatsapp, email, sms, line, wechat, telegram, kakaotalk), the `storybookId`, the `message`, and an `audience` of contact ids. The message can use {firstname}, {lastname}, {salesadvisor}, {salesadvisor.firstname}, {salesadvisor.lastname}.
 - **Link campaign** — `create_link_campaign`: a name, the `storybookId`, `utmSource` and `utmMedium`. No audience; you get a short link on the brand's domain to share anywhere, tracked under the campaign id.
 
+## Tracked link to any web page
+- `create_tracked_link` — any `https://` address (for example a page of the brand's website) with optional `utmSource`, `utmMedium` and `utmCampaign`, shortened on the brand's domain, as the Hub's "Create Tracked Link" does.
+- Nothing is stored and INSPIFY counts no clicks: the short link only redirects. The destination's own analytics read the UTM values.
+- For a story, use `create_link_campaign` or `create_share_link`; their views are reported.
+
 ## Audience
 - The audience is fixed when the campaign is created and cannot be changed later.
 - Contacts cannot be created or searched through this connection. Reuse contacts from an earlier campaign: `get_campaign_audience` or `list_contacts` on that campaign gives their ids. Otherwise the contacts are added in the INSPIFY Hub first.

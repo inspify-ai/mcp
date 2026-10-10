@@ -3,7 +3,7 @@
 Connects agent runtimes (Grok Build, Cursor, Claude and others) to the INSPIFY AI Creative Agency. Marketing teams use it to create brand storybooks from a brief, publish them on the brand's own domain, run messaging and link campaigns, share tracked links, and read how they perform.
 
 - **Plugin id:** `inspify-ai`
-- **Version:** 0.3.0
+- **Version:** 0.4.0
 - **MCP server key:** `inspify-ai`
 
 ## What it ships
@@ -18,7 +18,8 @@ Connects agent runtimes (Grok Build, Cursor, Claude and others) to the INSPIFY A
 ## Credentials
 - `INSPIFY_MCP_TOKEN` — a bearer token issued by INSPIFY, sent as `Authorization: Bearer …` to `mcp.inspify.ai` only. It belongs to one brand and carries the scopes that decide which tools appear.
 - The plugin ships no credentials. Never commit tokens, `.env` files or cloud keys.
-- Sign-in with an INSPIFY account (OAuth) is planned; until then, ask INSPIFY for a token.
+- A workspace admin creates the token in the INSPIFY Hub: Workspace Settings → API Keys → MCP Server → Create API key. It is shown once.
+- Sign-in with an INSPIFY account (OAuth) is planned.
 
 ## Security
 - **Deny-by-default:** no shell access, no cloud admin keys, no destructive disk operations.

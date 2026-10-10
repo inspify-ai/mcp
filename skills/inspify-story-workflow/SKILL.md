@@ -29,6 +29,7 @@ The order of the work. If the server's `initialize` instructions or a tool's des
 ## 4. Share
 - `create_link_campaign` — a link campaign: a short link on the brand's domain, tracked under the campaign id.
 - `create_share_link` — the same kind of link without a campaign.
+- `create_tracked_link` — a short link with UTM values to a page outside INSPIFY, such as the brand's website (no view count).
 - `create_campaign` — a campaign for contacts already in one of the brand's campaign audiences.
 
 ## 5. Track
